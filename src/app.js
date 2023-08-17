@@ -64,7 +64,7 @@ function dailyForecast(coordinates) {
 
 function formatHour(timestamp) {
   let date = new Date(timestamp * 1000);
-  let hour = date.getUTCHours();
+  let hour = date.getHours();
   let minutes = date.getMinutes();
   let formattedTime = `${hour.toString().padStart(2, "0")}:${minutes
     .toString()

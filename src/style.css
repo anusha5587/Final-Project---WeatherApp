@@ -223,3 +223,7 @@ footer a {
 #footerLink:hover {
   text-decoration: underline;
 }
+
+#background {
+  font-size: 10px;
+}

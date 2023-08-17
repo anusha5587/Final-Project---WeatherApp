@@ -146,7 +146,7 @@ function displayTemperature(response) {
   } else if (response.data.weather[0].main.includes("Thunderstorm")) {
     setVideoBackground("images/thunderstorm.mp4");
   } else if (response.data.weather[0].main.includes("Drizzle")) {
-    setVideoBackground("images/drizzle.mp4");
+    setVideoBackground("images/Drizzle.mp4");
   } else if (response.data.weather[0].main.includes("Rain")) {
     setVideoBackground("images/Raining.mp4");
   } else if (response.data.weather[0].main.includes("Snow")) {

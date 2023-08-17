@@ -154,7 +154,7 @@ function displayTemperature(response) {
   } else if (response.data.weather[0].main.includes("Fog", "Mist")) {
     setVideoBackground("images/fog.mp4");
   } else if (response.data.weather[0].main.includes("Clear")) {
-    setVideoBackground("images/clear sky.mp4");
+    setVideoBackground("images/Clear_skyies.mp4");
   }
   dailyForecast(response.data.coord);
   hourlyForecast(response.data.coord);

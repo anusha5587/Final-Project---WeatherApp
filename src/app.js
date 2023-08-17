@@ -59,11 +59,14 @@ function dailyForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "50fa4024e3b1d5eac2f51ab18a47e997";
   let apiUrlForecast = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrlForecast);
   axios.get(apiUrlForecast).then(forecastingReport);
 }
 
 function formatHour(timestamp) {
   let date = new Date(timestamp * 1000);
+  let timezoneOffset = date.getTimezoneOffset() * 60 * 1000;
+  date = new Date(date.getTime() + timezoneOffset);
   let hour = date.getHours();
   let minutes = date.getMinutes();
   let formattedTime = `${hour.toString().padStart(2, "0")}:${minutes
@@ -72,14 +75,9 @@ function formatHour(timestamp) {
   return formattedTime;
 }
 
-let timestamp = 1692205200000;
-let formattedTime = formatHour(timestamp);
-console.log(formattedTime);
-
 function hourlyReport(response) {
   let forecast = response.data.hourly;
   let hourlyForecastElement = document.querySelector(".weather-table");
-
   let hourlyForecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastHour, index) {
     if (index < 6) {
@@ -109,7 +107,7 @@ function hourlyForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "50fa4024e3b1d5eac2f51ab18a47e997";
   let apiUrlHourly = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrlHourly);
+
   axios.get(apiUrlHourly).then(hourlyReport);
 }
 

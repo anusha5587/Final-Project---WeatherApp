@@ -142,7 +142,7 @@ function displayTemperature(response) {
   );
   descriptionElement.innerHTML = response.data.weather[0].description;
   if (response.data.weather[0].main.includes("Clouds")) {
-    setVideoBackground("images/broken clouds.mp4");
+    setVideoBackground("images/Clouds.mp4");
   } else if (response.data.weather[0].main.includes("Thunderstorm")) {
     setVideoBackground("images/thunderstorm.mp4");
   } else if (response.data.weather[0].main.includes("Drizzle")) {
